@@ -1,23 +1,33 @@
+/* Root container with centering and spacing */
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  background-color: #f8fafc;
+  color: #333;
 }
 
+/* Logo styles with transition and hover effects */
 .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  transition: filter 300ms ease, transform 300ms ease;
+  margin-bottom: 2rem;
 }
 
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+  transform: scale(1.1);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+  transform: scale(1.1);
+}
+
+/* Spinning animation for the logo */
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
@@ -27,16 +37,127 @@
   }
 }
 
+/* Animation applied when reduced motion preference is not active */
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
   }
 }
 
+/* Card design: spacious padding and shadow for a card-like appearance */
 .card {
   padding: 2em;
+  background-color: white;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 300ms ease, box-shadow 300ms ease;
 }
 
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Styles for "Read the Docs" text */
 .read-the-docs {
   color: #888;
+  font-size: 0.875rem;
+  transition: color 200ms ease;
+}
+
+.read-the-docs:hover {
+  color: #646cff;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  #root {
+    padding: 1.5rem;
+  }
+
+  .logo {
+    height: 4em;
+    padding: 1rem;
+  }
+
+  .card {
+    padding: 1.5em;
+  }
+}
+
+/* Button styles for hover and focus effects */
+button {
+  padding: 1em 2em;
+  background-color: #6366f1;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: background-color 300ms ease, transform 300ms ease;
+}
+
+button:hover {
+  background-color: #4f46e5;
+  transform: translateY(-2px);
+}
+
+button:focus {
+  outline: 2px solid #6366f1;
+  outline-offset: 2px;
+}
+
+/* Styling for the Activation Function label and select box */
+label[for="activation"] {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #333;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* Styling for the select box itself */
+select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #4b5563;
+  background-color: #ffffff;
+  border: 2px solid #d1d5db;
+  border-radius: 0.75rem;
+  appearance: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Focus styles for select box */
+select:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.3);
+}
+
+/* Hover effect for the select box */
+select:hover {
+  border-color: #6366f1;
+}
+
+/* Style the arrow of the select box */
+select::-ms-expand {
+  display: none;
+}
+
+select:focus::-ms-expand {
+  display: block;
+}
+
+/* Optional: Add a custom background image for the dropdown arrow */
+select {
+  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 8"%3E%3Cpath d="M2 2l4 4 4-4" fill="none" stroke="%234b5563" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/%3E%3C/svg%3E');
+  background-position: right 0.75rem center;
+  background-repeat: no-repeat;
+  background-size: 12px 8px;
+  padding-right: 2.5rem; /* Adjust for space for the arrow */
 }
