@@ -12,7 +12,7 @@ import { motion } from 'framer-motion';
 
 export const LossChart = ({ data }: { data: number[] }) => {
   const chartData = data.map((loss, index) => ({ epoch: index + 1, loss }));
-
+  
   return (
     <motion.div
       initial={{ opacity: 0 }}
