@@ -16,13 +16,14 @@ function App() {
     prob: number;
   } | null>(null);
 
-  const handleStart = async ({ activation, learningRate, epochs }: any) => {
+  const handleStart = async ({ activation, learningRate, epochs, batchSize }: any) => {
     setLosses([]);
     setPredictionResult(null);
     await trainModel({
       activation,
       learningRate,
       epochs,
+      batchSize,
       onEpochEnd: (epoch, loss) => {
         setLosses(prev => [...prev, loss]);
       },

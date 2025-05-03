@@ -25,14 +25,14 @@ export function PredictionInput({ onPredict }: Props) {
           type="number"
           value={x}
           onChange={(e) => setX(e.target.value)}
-          placeholder="X value"
+          placeholder="Feature 1"
           className="border p-2 rounded w-24"
         />
         <input
           type="number"
           value={y}
           onChange={(e) => setY(e.target.value)}
-          placeholder="Y value"
+          placeholder="Feature 2"
           className="border p-2 rounded w-24"
         />
         <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">
